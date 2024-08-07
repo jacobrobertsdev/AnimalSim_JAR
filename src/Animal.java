@@ -1,8 +1,10 @@
 /**
  * The Animal class encapsulates a generic animal that can be sub-classed by other classes.
+ * 
  * @author JacobRoberts
  */
 
+import Exceptions.InvalidSimIDException;
 
 abstract class Animal {
 	
@@ -11,10 +13,8 @@ abstract class Animal {
 	protected boolean full;
 	protected boolean rested;
 	
-	// Constructors
-	
 	/**
-	 * Empty-argument constructor
+	 * Default constructor
 	 */
 	public Animal() {
 		this.simID = 0;
@@ -26,11 +26,11 @@ abstract class Animal {
 	/**
 	 * Preferred Constructor
 	 * 
-	 * @param simID
-	 * @param location
+	 * @param simID must be greater than 0.
+	 * @param location object of type Location.
 	 */
 	public Animal(int simID, Location location) {
-		this.simID = simID;
+		setSimID(simID);
 		this.location = location;
 		this.full = false;
 		this.rested = true;
@@ -38,8 +38,8 @@ abstract class Animal {
 	
 	/**
 	 * Generates a random double between 0 and 1.
-	 * Sets full to false if random number <= 0.5.
-	 * Sets full to true if random number > 0.5.
+	 * Sets full to false if random number is less than or equal to 0.5.
+	 * Sets full to true if random number is greater than 0.5.
 	 * 
 	 */
 	public void eat() {
@@ -56,8 +56,8 @@ abstract class Animal {
 	
 	/**
 	* Generates a random double between 0 and 1.
-	 * Sets rested to false if random number <= 0.5.
-	 * Sets rested to true if random number > 0.5.
+	 * Sets rested to false if random number is less than or equal to 0.5.
+	 * Sets rested to true if random number is greater than 0.5.
 	 * 
 	 */
 	public void sleep() {
@@ -71,7 +71,7 @@ abstract class Animal {
 		}
 	}
 	
-	// Getters and Setters
+	
 
 	/**
 	 * @return the simID
@@ -82,9 +82,19 @@ abstract class Animal {
 
 	/**
 	 * @param simID the simID to set
+	 * @throws InvalidSimIDException if simID is less than or equal to 0.
 	 */
 	public void setSimID(int simID) {
-		this.simID = simID;
+		
+		try {
+			if(simID > 0) {
+				this.simID = simID;
+			} else if (simID <= 0) {
+				throw new InvalidSimIDException("simID must be greater than 0");
+			}
+		} catch (InvalidSimIDException e) {
+			System.out.println(e.getMessage());
+		}
 	}
 
 	/**

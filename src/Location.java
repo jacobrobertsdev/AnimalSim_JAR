@@ -4,6 +4,8 @@
  * @author JacobRoberts
  */
 
+import Exceptions.InvalidCoordinateException;
+
 public class Location {
 	
 	private int xCoord;
