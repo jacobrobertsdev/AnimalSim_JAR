@@ -11,11 +11,20 @@ public class Location {
 
 	// Constructors
 	
+	/**
+	 * Default constructor
+	 */
 	public Location() {
 		this.xCoord = 0;
 		this.yCoord = 0;
 	}
 
+	/**
+	 * Preferred constructor
+	 * 
+	 * @param x the x coordinate to set, must be 0 or greater.
+	 * @param y the y coordinate to set, must be 0 or greater.
+	 */
 	public Location(int x, int y) {
 		setxCoord(x);
 		setyCoord(y);
@@ -24,8 +33,8 @@ public class Location {
 	/**
 	 * Updates both the x and y coordinates.
 	 * 
-	 * @param x the x coordinate to set
-	 * @param y the y coordinate to set
+	 * @param x the x coordinate to set, must be 0 or greater.
+	 * @param y the y coordinate to set, must be 0 or greater.
 	 */
 	public void update (int x, int y) {
 		setxCoord(x);
@@ -43,7 +52,6 @@ public class Location {
 		return coords;
 	}
 	
-	// Getters and Setters
 	
 	/**
 	 * @return the xCoord
