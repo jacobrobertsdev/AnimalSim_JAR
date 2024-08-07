@@ -23,7 +23,6 @@ public class Location {
 	
 	/**
 	 * Updates both the x and y coordinates.
-	 * Throws InvalidCoordinateException if x or y are less than 0
 	 * 
 	 * @param x the x coordinate to set
 	 * @param y the y coordinate to set
@@ -55,6 +54,7 @@ public class Location {
 
 	/**
 	 * @param xCoord the xCoord to set
+	 * @throws InvalidCoordinateExceptionif x is less than 0
 	 */
 	public void setxCoord(int xCoord) {
 
@@ -86,6 +86,7 @@ public class Location {
 
 	/**
 	 * @param yCoord the yCoord to set
+	 * @throws InvalidCoordinateExceptionif y is less than 0
 	 */
 	public void setyCoord(int yCoord) {
 		
