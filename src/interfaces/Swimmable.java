@@ -1,5 +1,14 @@
 package interfaces;
 
+/**
+ * The Swimmable interface represents Animals that can swim in a specified direction.
+ * Implementing classes should provide the logic for movement based on a given direction.
+ * Implementing classes should define how the movement is carried out based on the provided direction.
+ * Directions are represented by integers where each integer corresponds to a specific direction.
+ * 
+ * @author JacobRoberts
+ */
+
 public interface Swimmable {
 
 	/**
