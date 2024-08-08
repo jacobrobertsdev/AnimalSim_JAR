@@ -1,6 +1,8 @@
 package animals;
 
 import exceptions.InvalidWingspanException;
+import interfaces.Flyable;
+import interfaces.Walkable;
 
 /**
  * Goldfinch is a subclass of Animal
@@ -8,7 +10,7 @@ import exceptions.InvalidWingspanException;
  * @author JacobRoberts
  */
 
-public class Goldfinch extends Animal {
+public class Goldfinch extends Animal implements Flyable, Walkable {
 
 	private double wingSpan;
 
@@ -33,6 +35,40 @@ public class Goldfinch extends Animal {
 		setWingSpan(wingSpan);
 		this.full = false;
 		this.rested = true;
+	}
+
+	@Override
+	public void fly(Location location) {
+		this.location = location;
+	}
+	
+	@Override
+	public void walk(int direction) {
+		
+		if (direction < 1 || direction > 4) {
+			System.out.println("Direction must be 1 (N), 2 (E), 3 (S), 4 (W)");
+			
+		} else {
+			
+			switch (direction){
+			
+			case 1:
+				this.location.setyCoord(this.location.getyCoord() + 1);
+				break;
+			
+			case 2:
+				this.location.setxCoord(this.location.getxCoord() + 1);
+				break;
+				
+			case 3:
+				this.location.setyCoord(this.location.getyCoord() - 1);
+				break;
+			
+			case 4:
+				this.location.setxCoord(this.location.getxCoord() - 1);
+				break;
+			}
+		}
 	}
 
 	/**
@@ -67,5 +103,7 @@ public class Goldfinch extends Animal {
 		return "Goldfinch [wingSpan=" + wingSpan + ", simID=" + simID + ", location=" + location + ", full=" + full
 				+ ", rested=" + rested + "]";
 	}
+
+	
 
 }
