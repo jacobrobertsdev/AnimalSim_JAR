@@ -171,7 +171,7 @@ public class Application {
 		animals.add(bear2);
 		
 		for(Animal animal : animals) {
-			System.out.println(animal);
+			System.out.println(animal); // toString
 			System.out.println();
 		}
 		
