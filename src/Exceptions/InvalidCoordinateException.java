@@ -1,7 +1,7 @@
 package Exceptions;
 
 @SuppressWarnings("serial")
-public class InvalidCoordinateException extends Exception{
+public class InvalidCoordinateException extends RuntimeException{
 
 	public InvalidCoordinateException(String message) {
 		super(message);
