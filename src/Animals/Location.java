@@ -1,18 +1,20 @@
+package Animals;
+
+import Exceptions.InvalidCoordinateException;
+
 /**
  * This class encapsulates the X and Y coordinates on a simulation map.
  * 
  * @author JacobRoberts
  */
 
-import Exceptions.InvalidCoordinateException;
-
 public class Location {
-	
+
 	private int xCoord;
 	private int yCoord;
 
 	// Constructors
-	
+
 	/**
 	 * Default constructor
 	 */
@@ -31,30 +33,28 @@ public class Location {
 		setxCoord(x);
 		setyCoord(y);
 	}
-	
+
 	/**
 	 * Updates both the x and y coordinates.
 	 * 
 	 * @param x the x coordinate to set, must be 0 or greater.
 	 * @param y the y coordinate to set, must be 0 or greater.
 	 */
-	public void update (int x, int y) {
+	public void update(int x, int y) {
 		setxCoord(x);
 		setyCoord(y);
 	}
-	
-	
+
 	/**
 	 * Adds x and y coordinates to an integer array and returns the array.
 	 * 
 	 * @return array of integer coordinates [x,y]
 	 */
 	public int[] getCoordinates() {
-		int[] coords = {this.xCoord, this.yCoord};
+		int[] coords = { this.xCoord, this.yCoord };
 		return coords;
 	}
-	
-	
+
 	/**
 	 * @return the xCoord
 	 */
@@ -99,7 +99,7 @@ public class Location {
 	 * @throws InvalidCoordinateExceptionif y is less than 0
 	 */
 	public void setyCoord(int yCoord) {
-		
+
 		// Validate input, throw exception if invalid.
 		try {
 

@@ -1,32 +1,34 @@
+package Animals;
+
+import Exceptions.InvalidWingspanException;
+
 /**
- * This class is a subclass of Animal
+ * Goldfinch is a subclass of Animal
  * 
  * @author JacobRoberts
  */
 
-import Exceptions.InvalidWingspanException;
+public class Goldfinch extends Animal {
 
-public class Goldfinch extends Animal{
-		
 	private double wingSpan;
-	
+
 	/**
 	 * Default constructor
 	 */
 	public Goldfinch() {
-		super(0, new Location(0,0));
+		super(0, new Location(0, 0));
 		this.wingSpan = 9.0;
 	}
-	
+
 	/**
 	 * Preferred constructor
 	 * 
-	 * @param simID must be greater than 0.
+	 * @param simID    must be greater than 0.
 	 * @param location object of type Location.
 	 * @param wingSpan double between 5.0 and 11.0.
 	 */
-	
-	public Goldfinch(int simID, Location location, double wingSpan){
+
+	public Goldfinch(int simID, Location location, double wingSpan) {
 		super(simID, location);
 		setWingSpan(wingSpan);
 		this.full = false;
@@ -45,7 +47,7 @@ public class Goldfinch extends Animal{
 	 * @throws InvalidWingspanException if wingSpan is not between 5.0 and 11.0.
 	 */
 	public void setWingSpan(double wingSpan) {
-		
+
 		try {
 			if (wingSpan < 5.0 || wingSpan > 11.0) {
 				throw new InvalidWingspanException("wingSpan must be between 5.0 and 11.0.");
@@ -65,9 +67,5 @@ public class Goldfinch extends Animal{
 		return "Goldfinch [wingSpan=" + wingSpan + ", simID=" + simID + ", location=" + location + ", full=" + full
 				+ ", rested=" + rested + "]";
 	}
-	
-	
-	
-	
 
 }

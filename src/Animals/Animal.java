@@ -1,32 +1,35 @@
+package Animals;
+
+import Exceptions.InvalidSimIDException;
+
 /**
- * The Animal class encapsulates a generic animal that can be sub-classed by other classes.
+ * The Animal class encapsulates a generic animal that can be sub-classed by
+ * other classes.
  * 
  * @author JacobRoberts
  */
 
-import Exceptions.InvalidSimIDException;
-
 abstract class Animal {
-	
+
 	protected int simID;
 	protected Location location;
 	protected boolean full;
 	protected boolean rested;
-	
+
 	/**
 	 * Default constructor
 	 */
 	public Animal() {
 		this.simID = 0;
-		this.location = new Location(0,0);
+		this.location = new Location(0, 0);
 		this.full = false;
 		this.rested = true;
 	}
-	
+
 	/**
 	 * Preferred Constructor
 	 * 
-	 * @param simID must be greater than 0.
+	 * @param simID    must be greater than 0.
 	 * @param location object of type Location.
 	 */
 	public Animal(int simID, Location location) {
@@ -35,43 +38,40 @@ abstract class Animal {
 		this.full = false;
 		this.rested = true;
 	}
-	
+
 	/**
-	 * Generates a random double between 0 and 1.
-	 * Sets full to false if random number is less than or equal to 0.5.
-	 * Sets full to true if random number is greater than 0.5.
+	 * Generates a random double between 0 and 1. Sets full to false if random
+	 * number is less than or equal to 0.5. Sets full to true if random number is
+	 * greater than 0.5.
 	 * 
 	 */
 	public void eat() {
-		
+
 		double random = Math.random();
-		
+
 		if (random <= 0.5) {
 			this.full = false;
 		} else {
 			this.full = true;
 		}
 	}
-	
-	
+
 	/**
-	* Generates a random double between 0 and 1.
-	 * Sets rested to false if random number is less than or equal to 0.5.
-	 * Sets rested to true if random number is greater than 0.5.
+	 * Generates a random double between 0 and 1. Sets rested to false if random
+	 * number is less than or equal to 0.5. Sets rested to true if random number is
+	 * greater than 0.5.
 	 * 
 	 */
 	public void sleep() {
-		
+
 		double random = Math.random();
-		
+
 		if (random <= 0.5) {
 			this.rested = false;
 		} else {
 			this.rested = true;
 		}
 	}
-	
-	
 
 	/**
 	 * @return the simID
@@ -85,9 +85,9 @@ abstract class Animal {
 	 * @throws InvalidSimIDException if simID is less than or equal to 0.
 	 */
 	public void setSimID(int simID) {
-		
+
 		try {
-			if(simID > 0) {
+			if (simID > 0) {
 				this.simID = simID;
 			} else if (simID <= 0) {
 				throw new InvalidSimIDException("simID must be greater than 0");
@@ -139,7 +139,4 @@ abstract class Animal {
 		this.rested = rested;
 	}
 
-	
-	
-	
 }
