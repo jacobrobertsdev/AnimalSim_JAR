@@ -1,12 +1,14 @@
 
-package Animals;
+package animals;
 
-import Exceptions.InvalidSubspeciesException;
+import exceptions.InvalidSubspeciesException;
+
 /**
  * BrownBear is a subclass of Animal.
  * 
  * @author JacobRoberts
  */
+
 public class BrownBear extends Animal{
 
 	private String subSpecies;
@@ -84,9 +86,4 @@ public class BrownBear extends Animal{
 				+ ", rested=" + rested + "]";
 	}
 
-
-	
-	
-	
-	
 }

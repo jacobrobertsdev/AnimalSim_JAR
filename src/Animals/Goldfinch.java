@@ -1,6 +1,6 @@
-package Animals;
+package animals;
 
-import Exceptions.InvalidWingspanException;
+import exceptions.InvalidWingspanException;
 
 /**
  * Goldfinch is a subclass of Animal

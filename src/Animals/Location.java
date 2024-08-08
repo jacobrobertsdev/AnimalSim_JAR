@@ -1,6 +1,6 @@
-package Animals;
+package animals;
 
-import Exceptions.InvalidCoordinateException;
+import exceptions.InvalidCoordinateException;
 
 /**
  * This class encapsulates the X and Y coordinates on a simulation map.

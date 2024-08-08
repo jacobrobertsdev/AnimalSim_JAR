@@ -1,4 +1,4 @@
-package Exceptions;
+package exceptions;
 
 @SuppressWarnings("serial")
 public class InvalidSimIDException extends RuntimeException{

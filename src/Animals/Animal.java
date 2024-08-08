@@ -1,6 +1,6 @@
-package Animals;
+package animals;
 
-import Exceptions.InvalidSimIDException;
+import exceptions.InvalidSimIDException;
 
 /**
  * The Animal class encapsulates a generic animal that can be sub-classed by
