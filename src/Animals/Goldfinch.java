@@ -1,5 +1,7 @@
 package animals;
 
+import java.util.Arrays;
+
 import exceptions.InvalidWingspanException;
 import interfaces.Flyable;
 import interfaces.Walkable;
@@ -25,7 +27,7 @@ public class Goldfinch extends Animal implements Flyable, Walkable {
 	/**
 	 * Preferred constructor
 	 * 
-	 * @param simID    must be greater than 0.
+	 * @param simID must be greater than 0.
 	 * @param location object of type Location.
 	 * @param wingSpan double between 5.0 and 11.0.
 	 */
@@ -100,7 +102,7 @@ public class Goldfinch extends Animal implements Flyable, Walkable {
 	 */
 	@Override
 	public String toString() {
-		return "Goldfinch [wingSpan=" + wingSpan + ", simID=" + simID + ", location=" + location + ", full=" + full
+		return "Goldfinch [wingSpan=" + wingSpan + ", simID=" + simID + ", location=" + Arrays.toString(this.location.getCoordinates()) + ", full=" + full
 				+ ", rested=" + rested + "]";
 	}
 

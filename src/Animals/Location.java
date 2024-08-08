@@ -13,8 +13,6 @@ public class Location {
 	private int xCoord;
 	private int yCoord;
 
-	// Constructors
-
 	/**
 	 * Default constructor
 	 */
@@ -100,7 +98,6 @@ public class Location {
 	 */
 	public void setyCoord(int yCoord) {
 
-		// Validate input, throw exception if invalid.
 		try {
 
 			if (yCoord < 0) {

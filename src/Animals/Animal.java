@@ -9,7 +9,7 @@ import exceptions.InvalidSimIDException;
  * @author JacobRoberts
  */
 
-abstract class Animal {
+public abstract class Animal {
 
 	protected int simID;
 	protected Location location;
@@ -29,7 +29,7 @@ abstract class Animal {
 	/**
 	 * Preferred Constructor
 	 * 
-	 * @param simID    must be greater than 0.
+	 * @param simID must be greater than 0.
 	 * @param location object of type Location.
 	 */
 	public Animal(int simID, Location location) {

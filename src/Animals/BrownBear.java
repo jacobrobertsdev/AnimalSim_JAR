@@ -1,6 +1,8 @@
 
 package animals;
 
+import java.util.Arrays;
+
 import exceptions.InvalidSubspeciesException;
 import interfaces.Swimmable;
 import interfaces.Walkable;
@@ -28,8 +30,8 @@ public class BrownBear extends Animal implements Walkable, Swimmable {
 	/**
 	 * Preferred constructor
 	 * 
-	 * @param simID      must be greater than 0.
-	 * @param location   object of type Location.
+	 * @param simID must be greater than 0.
+	 * @param location object of type Location.
 	 * @param subSpecies String value
 	 */
 	public BrownBear(int simID, Location location, String subSpecies) {
@@ -110,6 +112,7 @@ public class BrownBear extends Animal implements Walkable, Swimmable {
 	 * @throws InvalidSubspeciesException if subSpecies does not equal "Alaskan", "Asiatic", "European", "Grizzly", "Kodiak", or "Siberian".
 	 */
 	public void setSubSpecies(String subSpecies) {
+		
 		String[] validSpecies = { "Alaskan", "Asiatic", "European", "Grizzly", "Kodiak", "Siberian" };
 		boolean isValid = false;
 
@@ -125,7 +128,7 @@ public class BrownBear extends Animal implements Walkable, Swimmable {
 				this.subSpecies = subSpecies;
 			} else {
 				throw new InvalidSubspeciesException(
-						"Invalid Subspecies. Must be Alaskan, Asiatic, European, Grizzly, Kodiak, or Siberian");
+						"Invalid Subspecies. Must be Alaskan, Asiatic, European, Grizzly, Kodiak, or Siberian (not case sensitive)");
 			}
 
 		} catch (InvalidSubspeciesException e) {
@@ -139,7 +142,7 @@ public class BrownBear extends Animal implements Walkable, Swimmable {
 	 */
 	@Override
 	public String toString() {
-		return "BrownBear [subSpecies=" + subSpecies + ", simID=" + simID + ", location=" + location + ", full=" + full
+		return "BrownBear [subSpecies=" + subSpecies + ", simID=" + simID + ", location=" + Arrays.toString(this.location.getCoordinates()) + ", full=" + full
 				+ ", rested=" + rested + "]";
 	}
 
