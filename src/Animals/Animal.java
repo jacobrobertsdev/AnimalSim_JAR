@@ -112,28 +112,28 @@ public abstract class Animal {
 	}
 
 	/**
-	 * @return the full
+	 * @return full
 	 */
 	public boolean isFull() {
 		return full;
 	}
 
 	/**
-	 * @param full the full to set
+	 * @param full the boolean to set
 	 */
 	public void setFull(boolean full) {
 		this.full = full;
 	}
 
 	/**
-	 * @return the rested
+	 * @return rested
 	 */
 	public boolean isRested() {
 		return rested;
 	}
 
 	/**
-	 * @param rested the rested to set
+	 * @param rested the boolean to set
 	 */
 	public void setRested(boolean rested) {
 		this.rested = rested;
