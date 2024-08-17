@@ -3,6 +3,10 @@ import java.util.ArrayList;
 import java.util.Arrays;
 
 import animals.*;
+import exceptions.InvalidCoordinateException;
+import exceptions.InvalidSimIDException;
+import exceptions.InvalidSubspeciesException;
+import exceptions.InvalidWingspanException;
 
 public class Application {
 
@@ -30,7 +34,11 @@ public class Application {
 		System.out.println();
 
 		
-		location.setyCoord(-2); // Throws exception
+		try { 
+			location.setyCoord(-2); // Throws exception
+		} catch (InvalidCoordinateException e) {
+			System.out.println(e.getMessage());
+		}
 		System.out.println();
 
 		System.out.println(location.getyCoord());
@@ -66,7 +74,11 @@ public class Application {
 		System.out.println(finch.getSimID());
 		System.out.println();
 		
-		finch.setSimID(-123); // Throws exception
+		try {
+			finch.setSimID(-123); // Throws exception
+		} catch (InvalidSimIDException e) {
+			System.out.println(e.getLocalizedMessage());
+		}
 		System.out.println();
 		
 		finch.setLocation(new Location(9, 3));
@@ -98,7 +110,11 @@ public class Application {
 		System.out.println(g.getWingSpan());
 		System.out.println();
 		
-		g.setWingSpan(4.0); // Throws exception
+		try {
+			g.setWingSpan(4.0); // Throws exception
+		} catch (InvalidWingspanException e) {
+			System.out.println(e.getMessage());
+		}
 		System.out.println();
 		
 		System.out.println(g); // toString
@@ -130,7 +146,11 @@ public class Application {
 		System.out.println(b.getSubSpecies());
 		System.out.println();
 		
-		b.setSubSpecies("Invalid subspecies"); // Throws exception
+		try {
+			b.setSubSpecies("Invalid subspecies"); // Throws exception
+		} catch (InvalidSubspeciesException e) {
+			System.out.println(e.getMessage());
+		}
 		System.out.println();
 		
 		b.setSubSpecies("Grizzly");
@@ -153,21 +173,19 @@ public class Application {
 		
 		ArrayList<Animal> animals = new ArrayList<Animal>();
 		
-		Goldfinch finch1 = new Goldfinch();
-		System.out.println();
-		finch1.setSimID(499);
+//		Goldfinch finch1 = new Goldfinch();
+//		finch1.setSimID(499);
 		
 		Goldfinch finch2 = new Goldfinch(8888, new Location(9,7), 6.2);
 		
-		BrownBear bear1 = new BrownBear();
-		bear1.setSimID(93333);
-		System.out.println();
+//		BrownBear bear1 = new BrownBear();
+//		bear1.setSimID(93333);
 		
 		BrownBear bear2 = new BrownBear(2414, new Location (2,2), "Kodiak");
 		
-		animals.add(finch1);
+//		animals.add(finch1);
 		animals.add(finch2);
-		animals.add(bear1);
+//		animals.add(bear1);
 		animals.add(bear2);
 		
 		for(Animal animal : animals) {

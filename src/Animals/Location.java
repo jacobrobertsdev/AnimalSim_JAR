@@ -66,9 +66,6 @@ public class Location {
 	 */
 	public void setxCoord(int xCoord) {
 
-		// Validate input, throw exception if invalid
-		try {
-
 			if (xCoord < 0) {
 
 				throw new InvalidCoordinateException("X cannot be less than 0");
@@ -78,10 +75,6 @@ public class Location {
 				this.xCoord = xCoord;
 			}
 
-		} catch (InvalidCoordinateException e) {
-
-			System.out.println(e.getMessage());
-		}
 
 	}
 
@@ -98,8 +91,6 @@ public class Location {
 	 */
 	public void setyCoord(int yCoord) {
 
-		try {
-
 			if (yCoord < 0) {
 
 				throw new InvalidCoordinateException("Y cannot be less than 0");
@@ -108,11 +99,6 @@ public class Location {
 
 				this.yCoord = yCoord;
 			}
-
-		} catch (InvalidCoordinateException e) {
-
-			System.out.println(e.getMessage());
-		}
 	}
 
 }

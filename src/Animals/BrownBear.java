@@ -116,11 +116,11 @@ public class BrownBear extends Animal implements Walkable, Swimmable {
 		String[] validSpecies = { "Alaskan", "Asiatic", "European", "Grizzly", "Kodiak", "Siberian" };
 		boolean isValid = false;
 
-		try {
 
 			for (String species : validSpecies) {
-				if (subSpecies.toLowerCase().equals(species.toLowerCase())) {
+				if (subSpecies.equalsIgnoreCase(species)) {
 					isValid = true;
+					break;
 				}
 			}
 
@@ -130,11 +130,6 @@ public class BrownBear extends Animal implements Walkable, Swimmable {
 				throw new InvalidSubspeciesException(
 						"Invalid Subspecies. Must be Alaskan, Asiatic, European, Grizzly, Kodiak, or Siberian (not case sensitive)");
 			}
-
-		} catch (InvalidSubspeciesException e) {
-			System.out.println(e.getMessage());
-		}
-
 	}
 
 	/**

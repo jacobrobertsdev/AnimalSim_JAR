@@ -85,16 +85,13 @@ public abstract class Animal {
 	 * @throws InvalidSimIDException if simID is less than or equal to 0.
 	 */
 	public void setSimID(int simID) {
-
-		try {
+		
 			if (simID > 0) {
 				this.simID = simID;
 			} else if (simID <= 0) {
 				throw new InvalidSimIDException("simID must be greater than 0");
 			}
-		} catch (InvalidSimIDException e) {
-			System.out.println(e.getMessage());
-		}
+		
 	}
 
 	/**
